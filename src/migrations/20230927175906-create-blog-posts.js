@@ -29,11 +29,11 @@ module.exports = {
         primaryKey: true,
       },
       published: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
       updated: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
     });
