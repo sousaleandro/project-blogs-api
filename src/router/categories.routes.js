@@ -8,4 +8,6 @@ route.use('/', validateToken);
 
 route.post('/', validateCategory, categoriesController.create);
 
+route.get('/', categoriesController.getAll);
+
 module.exports = route;
