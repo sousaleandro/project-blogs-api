@@ -29,6 +29,15 @@ const create = async (req, res) => {
   }
 };
 
+const getAll = async (_req, res) => {
+  try {
+    const users = await userService.getAll();
+    return res.status(200).json(users);
+  } catch (err) {
+    return res.status(500).json({ message: 'Internal Error', error: err.message });
+  }
+};
+
 const getById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -45,4 +54,5 @@ const getById = async (req, res) => {
 module.exports = {
   create,
   getById,
+  getAll,
 };
